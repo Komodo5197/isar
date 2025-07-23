@@ -1,6 +1,6 @@
 name: Isar Debug
 
-on: workflow-dispatch
+on: workflow_dispatch
 
 jobs:
   build_binaries:
