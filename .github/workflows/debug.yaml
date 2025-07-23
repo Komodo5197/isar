@@ -1,0 +1,25 @@
+name: Isar Debug
+
+on: workflow-dispatch
+
+jobs:
+  build_binaries:
+    name: Build Binaries
+    strategy:
+      fail-fast: false
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare Build
+        uses: ./.github/actions/prepare-build
+      - name: Build binary
+        run: bash tool/build_windows.sh x64
+      - name: Upload binary
+        uses: svenstaro/upload-release-action@v2
+        with:
+          file: target/x86_64-pc-windows-msvc/*
+          asset_name: isar_x86_64
+          
+          
+          
+          
