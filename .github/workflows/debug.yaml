@@ -7,7 +7,7 @@ jobs:
     name: Build Binaries
     strategy:
       fail-fast: false
-    runs-on: windows-latest
+    runs-on: windows-1909
     steps:
       - uses: actions/checkout@v4
       - name: Prepare Build
